@@ -6,7 +6,14 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #DDDDDD;
+ 
+}
+
+body {
+  height: 100vh;
+  background: no-repeat linear-gradient(to right top,#ffffff, #77b2ff);
+  background-size: cover;
+  overflow: hidden;
 }
 
 a {
@@ -22,4 +29,5 @@ p {
   margin: 0;
   padding: 0;
 }
+
 
