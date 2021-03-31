@@ -6,12 +6,14 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const AvaCard = () => {
 
+  const [opened,setOpened] = useState(false);
+
   const postVariants = {
     initial: {  scale: 0.96, opacity: 0 },
-    enter: {  scale: 1, opacity: 1, transition: { duration: 0.2, ease: "easeInOut" } },
+    enter: {  scale: 1, opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } },
     exit: {
       y: "-100vh",
-      transition: { duration: 0.2, ease: "easeInOut" }
+      transition: { duration: 0.4, ease: "easeInOut" }
     }
   };
 
@@ -22,7 +24,9 @@ const AvaCard = () => {
           <a href="https://github.com/LeJ84/" target="_blank"><div className={styles.card__github}><span className={styles.logo}></span></div></a>
           <a href="https://www.linkedin.com/in/ducomj/" target="_blank"><div className={styles.card__linkedin}><span className={styles.logo}></span></div></a>
           <div className={styles.card__avatar} onClick={(e)=> {
-            e.currentTarget.closest(`.${styles.card}`).classList.toggle(styles.card__clicked);}}></div>
+            e.currentTarget.closest(`.${styles.card}`).classList.toggle(styles.card__clicked);
+            setOpened(!opened);
+          }}></div>
           <div className={styles.card__content}>
             <div className={styles.card__name}>Jérôme DUCOM</div>
             <div className={styles.card__title}>DÉVELOPPEUR	FULLSTACK</div>
@@ -34,11 +38,11 @@ const AvaCard = () => {
             </div>
           </div>
         </div>
-        <Link href="/cv">
-              <a>
-                <div className={styles.card__next} >V</div>
-              </a>
-        </Link>
+        { opened && (<Link href="/cv">
+          <a>
+            <div className={styles.card__next} >CV</div>
+          </a>
+        </Link>)}
       </motion.div>
 )};
 
