@@ -1,5 +1,5 @@
 
-
+  
 
 .card {
         height: 320px;
@@ -64,13 +64,6 @@
         //transition: left 1s cubic-bezier(.52,.01,1,.51);      
         position:absolute;
     }
-
-  /*   &:hover{
-        transform:scale(0.9,0.9);
-        .card__avatar {transform:scale(1.1,1.1)}
-        .card__github {z-index:-1;}
-        .card__linkedin {z-index:-1;}
-    } */
 }
 
 .card__next {
@@ -155,7 +148,7 @@
         
     }
     .card__github {
-        display:block;
+        display:none;
         position:absolute;
         left: -50px;
         background-color: white;
@@ -174,11 +167,13 @@
 
     .card__github:hover {
         cursor:pointer;
+        //background-size : 40px 40px;
+        //transition: background-size 0.1s cubic-bezier(.52,.01,1,.51);      
     }
     
 
     .card__linkedin {
-        display:block;
+        display:none;
         position:absolute;
         left: -50px;
         background-color: white;
@@ -195,10 +190,77 @@
         background-repeat: no-repeat;
     }
 
-   
+    .card__linkedin:hover {
+        cursor:pointer;
+        //background-size : 40px 40px;
+        //transition: background-size 0.1s cubic-bezier(.52,.01,1,.51);      
+    }
     
 }
 
+@media (min-width: 1080px) {
+
+    .card {
+        .card__github {
+            opacity:0;
+            position:absolute;
+            top: 75px;
+            left: -10px;
+            width: 10px;
+            height: 50px;
+            transition: all 0.3s cubic-bezier(.52,.01,1,.51);
+        }
+
+        .card__linkedin {
+            opacity:0;
+            top: 15px;
+            left: -10px;
+            width: 10px;
+            height: 50px;
+            transition: all 0.3s cubic-bezier(.52,.01,1,.51);
+            position:absolute;
+        }
+    }
+
+    .card__clicked {
+       
+        .card__github {
+            display:block;
+            position:absolute;
+            left: -50px;
+            background-color: white;
+            text-align:right;
+            width : 50px;
+            height: 50px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            box-shadow: 2px 2px 10px #222222;
+            opacity:1;
+            background-image : url("/github.png");
+            background-size : 40px 40px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    
+        .card__linkedin {
+            display:block;
+            position:absolute;
+            left: -50px;
+            background-color: white;
+            text-align:right;
+            width : 50px;
+            height: 50px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            box-shadow: 2px 2px 10px #222222;
+            opacity: 1;
+            background-image : url("/linkedin.png");
+            background-size : 40px 40px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}
 
 
 
