@@ -21,8 +21,26 @@ const AvaCard = () => {
      <motion.div 
         initial="initial" animate="enter" exit="exit" variants={postVariants}>
         <div className={styles.card}>
-          <a href="https://github.com/LeJ84/" target="_blank"><div className={styles.card__github}><span className={styles.logo}></span></div></a>
-          <a href="https://www.linkedin.com/in/ducomj/" target="_blank"><div className={styles.card__linkedin}><span className={styles.logo}></span></div></a>
+          <Link href="https://github.com/LeJ84/">
+            <a target="_blank">
+              <div className={`${styles.card__tab__github} ${styles.card__tab}`}></div>
+            </a>
+          </Link>
+          <Link href="https://www.linkedin.com/in/ducomj/">
+            <a target="_blank">
+              <div className={`${styles.card__tab__linkedin} ${styles.card__tab}`}></div>
+            </a>
+          </Link>
+          <Link href="/cv">
+            <a>
+              <div className={`${styles.card__tab__work} ${styles.card__tab}`}></div>
+            </a>
+          </Link>
+          <Link href="/education">
+            <a>
+              <div className={`${styles.card__tab__education} ${styles.card__tab}`}></div>
+            </a>
+          </Link>
           <div className={styles.card__avatar} onClick={(e)=> {
             e.currentTarget.closest(`.${styles.card}`).classList.toggle(styles.card__clicked);
             setOpened(!opened);
@@ -38,11 +56,6 @@ const AvaCard = () => {
             </div>
           </div>
         </div>
-        { opened && (<Link href="/cv">
-          <a>
-            <div className={styles.card__next} >CV</div>
-          </a>
-        </Link>)}
       </motion.div>
 )};
 
