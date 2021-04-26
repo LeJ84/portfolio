@@ -1,9 +1,10 @@
-import XpCard from "../../components/XpCard";
 import { motion } from "framer-motion";
 import Link from 'next/link';
-import xps from  '../../data/xp.json';
+import experiences from  '../../data/xp.json';
+import styles from '../../styles/ProfessionalWorksList.module.scss';
 
-export default function TechnicalExp() {
+
+export default function ProfessionalWorksList() {
  
   const cardVariants = {
     initial: { y:"100vh"},
@@ -15,12 +16,13 @@ export default function TechnicalExp() {
   };
 
   const tab=[1,2,3];
-  const xpsJSX = xps.map((xp) => {
+  const experiencesList = experiences.map((xp) => {
     return (
         <motion.div variants={cardVariants} key={xp.id}>
           <div className="card" key={xp.id}>
-            <div>{xp.title}</div>
-            <div>{xp.content.split('/n').map(element => <p key={element} >{element}</p>)}</div>
+            <div class={styles.title}>{xp.title}</div>
+            <div>{xp.subtitle}</div>
+            <div>{xp.content.split('-').map(element => <p key={element} >{'-' + element}</p>)}</div>
           </div>
         </motion.div>
     );
@@ -30,14 +32,14 @@ export default function TechnicalExp() {
     <div className="xp-container">
       <motion.div  initial="initial" animate="enter" exit="exit" variants={{ enter: { transition: { staggerChildren: 0.5 }}, exit: { transition: { staggerChildren: 0.2 } } }}>
         <div className="xp-container">
-          {xpsJSX}
+          {experiencesList}
         </div>
       </motion.div>
-      <Link href="/">
+{/*       <Link href="/">
         <a>
           <div>CV</div>
         </a>
-      </Link>
+      </Link> */}
     </div>
   )
 }
