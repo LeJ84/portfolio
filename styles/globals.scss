@@ -31,9 +31,9 @@ p {
 
 .xp-container {
   display:flex;
-  justify-content: center;
-  flex-wrap:wrap;
   height:100vh;
+  margin:0 auto;
+  padding-top:20px;
 }
 
 .card {
@@ -50,9 +50,17 @@ p {
   font-family: 'Zilla Slab', serif;
 }
 
+.button-home {
+
+}
+
 @media (min-width: 1080px) {
   body {
     overflow: hidden;
   }
-}
+  
+  .xp-container {
+    padding-top:150px;
+  }
 
+}

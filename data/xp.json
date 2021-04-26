@@ -2,18 +2,21 @@
     {
         "id": 1,
         "title" : "O'dyssée - Projet Professionnel",
+        "period": "Février - Mars 2021",
         "subtitle" : "Site de création et de partage de carnets de voyage",
         "content" : " Projet en équipe de 4 sur un mois en méthode Agile (4 sprints)- Création d’une API avec un serveur Express- Création d’actives records pour la connexion à la BDD PostgreSQL- Interface front en React associé à Redux- Gestion de la carte du monde grâce à Leaflet.js et géolocalisation avec positionStack"
     },
     {
         "id": 2,
         "title" : "ATInternet - Développeur C#.net",
+        "period": "2007-2008",
         "subtitle" : "Développement des sites Xiti et Xitimonitor, XitiLabs",
         "content" : " Mise en ligne des nouvelles études- Création des mailings- Développement XitiLabs :  application de suivi des projets en interne"
     },
     {
         "id": 3,
         "title" : "Atooltime - Développeur C++.net",
+        "period": "2006",
         "subtitle" : "Développement d'un logiciel de gestion du temps",
         "content" : " Evolution des fonctionnalités- Modules clients spécifiques- Intranet et connexion à des badgeuses biométriques"
     }

@@ -8,7 +8,7 @@ export default function ProfessionalWorksList() {
  
   const cardVariants = {
     initial: { y:"100vh"},
-    enter: { scale: 1, y: 150, opacity: 1, transition: { duration: 0.5, ease: [0.48, 0.15, 0.25, 0.96] } },
+    enter: { scale: 1, y: 0, opacity: 1, transition: { duration: 0.5, ease: [0.48, 0.15, 0.25, 0.96] } },
     exit: {
       y: "-100vh",
       transition: { duration: 0.4, ease: "easeInOut" }
@@ -19,27 +19,21 @@ export default function ProfessionalWorksList() {
   const experiencesList = experiences.map((xp) => {
     return (
         <motion.div variants={cardVariants} key={xp.id}>
-          <div className="card" key={xp.id}>
-            <div class={styles.title}>{xp.title}</div>
-            <div>{xp.subtitle}</div>
-            <div>{xp.content.split('-').map(element => <p key={element} >{'-' + element}</p>)}</div>
+          <div className={styles.card} key={xp.id}>
+            <p class={styles.title}>{xp.title}</p>
+            <p class={styles.period}>{xp.period}</p>
+            <p class={styles.subtitle}>{xp.subtitle}</p>
+            <p>{xp.content.split('-').map(element => <p key={element} >{'-' + element}</p>)}</p>
           </div>
         </motion.div>
     );
   })
 
   return (
-    <div className="xp-container">
-      <motion.div  initial="initial" animate="enter" exit="exit" variants={{ enter: { transition: { staggerChildren: 0.5 }}, exit: { transition: { staggerChildren: 0.2 } } }}>
-        <div className="xp-container">
-          {experiencesList}
-        </div>
-      </motion.div>
-{/*       <Link href="/">
-        <a>
-          <div>CV</div>
-        </a>
-      </Link> */}
-    </div>
+    <motion.div className="xp-container" initial="initial" animate="enter" exit="exit" variants={{ enter: { transition: { staggerChildren: 0.5 }}, exit: { transition: { staggerChildren: 0.2 } } }}>
+      <div className={styles.experiences__list}>
+        {experiencesList}
+      </div>
+    </motion.div>
   )
 }
