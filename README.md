@@ -1,3 +1,6 @@
-# Portfolio
+# Portfolio (en cours de construction)
 
-Début de portfolio créé sous Next.js
+Consultable sur https://lej84-portfolio.vercel.app/
+
+Next.js
+Framer Motion
