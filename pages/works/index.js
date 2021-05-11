@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Link from 'next/link';
 import experiences from  '../../data/xp.json';
-import styles from '../../styles/ProfessionalWorksList.module.scss';
+//import '../../styles/works.scss';
 
 
 export default function ProfessionalWorksList() {
@@ -19,11 +19,11 @@ export default function ProfessionalWorksList() {
   const experiencesList = experiences.map((xp) => {
     return (
         <motion.div variants={cardVariants} key={xp.id}>
-          <div className={styles.card} key={xp.id}>
-            <p class={styles.title}>{xp.title}</p>
-            <p class={styles.period}>{xp.period}</p>
-            <p class={styles.subtitle}>{xp.subtitle}</p>
-            <p>{xp.content.split('-').map(element => <p key={element} >{'-' + element}</p>)}</p>
+          <div className="card" key={xp.id}>
+            <p className="title">{xp.title}</p>
+            <p className="period">{xp.period}</p>
+            <p className="subtitle">{xp.subtitle}</p>
+            {xp.content.split('-').map(element => <p key={element} >{'-' + element}</p>)}
           </div>
         </motion.div>
     );
@@ -31,7 +31,7 @@ export default function ProfessionalWorksList() {
 
   return (
     <motion.div className="xp-container" initial="initial" animate="enter" exit="exit" variants={{ enter: { transition: { staggerChildren: 0.5 }}, exit: { transition: { staggerChildren: 0.2 } } }}>
-      <div className={styles.experiences__list}>
+      <div className="experiences__list">
         {experiencesList}
       </div>
     </motion.div>

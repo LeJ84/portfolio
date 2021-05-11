@@ -1,16 +1,13 @@
-
-  
-
 .card {
-        height: 320px;
-        width: 320px;
-        border-radius: 50%;
-        background-color:#173B4C;
-        margin: 150px auto 0px auto;
-        padding: 5px 5px 5px 5px; 
-        transition: all 0.2s ease;
-        position:relative;
-        box-shadow: 2px 2px 10px #333333;
+    height: 320px;
+    width: 320px;
+    border-radius: 50%;
+    background-color:#173B4C;
+    margin: 150px auto 0px auto;
+    padding: 5px 5px 5px 5px; 
+    transition: all 0.2s ease;
+    position:relative;
+    box-shadow: 2px 2px 10px #333333;
 
     .card__avatar {
         background-image : url("/moi.jpg");
@@ -34,22 +31,14 @@
     .card__content {
         opacity:0;
         position:relative;
-
     }
 
-    /* .card__next {
-        opacity:0;
-        transition: opacity 0.5s ease;
-        position:relative;
-    } */
     .card__tab {
         opacity:0;
         position:absolute;
         bottom: 10px;
         left: 75px;
         height: 10px;
-        //background-size : 0px 0px;
-        //transition: left 1s cubic-bezier(.52,.01,1,.51);
         transition: all 0.3s cubic-bezier(.52,.01,1,.51);
         &__work{
             left:45px;
@@ -79,7 +68,6 @@
     color:white;
     height : 50px;
     width : 50px;
-    /*border : 2px solid white;*/
     box-shadow: 2px 2px 10px #222222;
     border-radius : 50%;
     opacity:1;
@@ -108,7 +96,7 @@
         box-shadow: 2px 2px 10px #222222;
         border: 2px solid #173B4C;
     }
-    
+
     .card__content {
         display:flex;
         flex-direction: column;
@@ -144,9 +132,6 @@
             font-size:1.3rem;
             line-height: 1.2rem;
         }
-       
-
-        
     }
 
     .card__tab {
@@ -173,8 +158,6 @@
             box-shadow: 2px 2px 10px #EEEEEE;
         };
     }
-
-    
 }
 
 
